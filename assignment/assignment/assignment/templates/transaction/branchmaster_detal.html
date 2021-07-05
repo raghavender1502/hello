@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'transaction_branchmaster_list' %}">BranchMaster Listing</a></p>
+<table class="table">
+<tr><td>short_name</td><td>{{ object.short_name }}</td></tr>
+<tr><td>contact_person_name</td><td>{{ object.contact_person_name }}</td></tr>
+<tr><td>gst_number</td><td>{{ object.gst_number }}</td></tr>
+<tr><td>address1</td><td>{{ object.address1 }}</td></tr>
+<tr><td>pin_code</td><td>{{ object.pin_code }}</td></tr>
+<tr><td>mobile</td><td>{{ object.mobile }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit BranchMaster</a>
+
+{% endblock %}
